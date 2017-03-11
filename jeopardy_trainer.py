@@ -9,6 +9,14 @@ import string
 from nltk.corpus import stopwords
 from sklearn.svm import LinearSVC
 
+'''
+
+DO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZ
+DO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZ
+DO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZ
+DO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZ
+
+'''
 
 stopwords = set(stopwords.words("english"))
 punctuation = set(string.punctuation)
@@ -61,13 +69,15 @@ for d in data:
     x = [0] * len(word_id)
     words = ''.join([c for c in d['question'].lower() if not c in punctuation]).split()
     for w in words:
-        x[word_id[w]] = 1
+        if w in word_id:
+            x[word_id[w]] = 1
     X.append(x)
     y.append(category_id[d['category']])
 
+print "Done loading data!"
 
 X_train, X_val = np.asmatrix(X[:(len(X)/2)]), np.asmatrix(X[(len(X)/2):])
-y_train, y_val = np.asmatrix(y[:(len(y)/2)]), np.asmatrix(y[(len(y)/2):])
+y_train, y_val = np.asarray(y[:(len(y)/2)]), np.asarray(y[(len(y)/2):])
 
 model = LinearSVC(C=1)
 model.fit(X_train, y_train)
