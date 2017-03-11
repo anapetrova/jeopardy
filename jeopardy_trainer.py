@@ -9,15 +9,6 @@ import string
 from nltk.corpus import stopwords
 from sklearn.svm import LinearSVC
 
-'''
-
-DO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZ
-DO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZ
-DO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZ
-DO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZDO THE QUIZ
-
-'''
-
 stopwords = set(stopwords.words("english"))
 punctuation = set(string.punctuation)
 
